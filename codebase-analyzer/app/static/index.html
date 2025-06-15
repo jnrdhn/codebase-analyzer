@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Codebase Analyst</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- We'll use a library to render markdown nicely -->
+    <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Codebase Analyst</h1>
+            <p>Enter a public GitHub repository URL to generate an AI-powered analysis.</p>
+        </header>
+
+        <form id="analysis-form">
+            <input type="url" id="repo-url" placeholder="https://github.com/user/repo" required>
+            <button type="submit" id="submit-btn">Analyze</button>
+        </form>
+
+        <div id="results-container">
+            <!-- JavaScript will populate this area -->
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Analyzing repository... This may take a few minutes.</p>
+                <p id="polling-status"></p>
+            </div>
+            <div id="report"></div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
