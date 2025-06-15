@@ -7,9 +7,9 @@
 
 An open-source tool that uses generative AI to analyze public GitHub repositories and generate high-level summaries of the codebase.
 
-### **Live Demo is WIP** check out [local development](#-local-development-setup)
+### **Live Demo is WIP** check out [local Deployment](#local-development-setup)
 
-![Project Screenshot](./docs/screenshot.png)
+![Project Screenshot](./docs/Screenshot.png)
 
 ---
 
@@ -28,16 +28,16 @@ This application uses a modern, asynchronous, distributed architecture to handle
 
 ```mermaid
 graph TD
-    A[User @ React Frontend] -->|1. POST /analyze| B(FastAPI Server);
-    B -->|2. Create Job| C[(PostgreSQL DB)];
-    B -->|3. Enqueue Job| D[(Redis Queue)];
-    D -->|4. Dequeue Job| E(Celery Worker);
-    E -->|5. git clone| F[GitHub.com];
-    E -->|6. Call LLM| G[Google Gemini API];
-    G -->|7. Get Summary| E;
-    E -->|8. Save Report| C;
-    A -->|9. Poll GET /jobs/{id}| B;
-    B -->|10. Fetch Status| C;
+    A[User @ React Frontend] -- 1\. POST /analyze --> B(FastAPI Server);
+    B -- 2\. Create Job --> C[(PostgreSQL DB)];
+    B -- 3\. Enqueue Job --> D[(Redis Queue)];
+    D -- 4\. Dequeue Job --> E(Celery Worker);
+    E -- 5\. git clone --> F[GitHub.com];
+    E -- 6\. Call LLM --> G[Google Gemini API];
+    G -- 7\. Get Summary --> E;
+    E -- 8\. Save Report --> C;
+    A -- 9\. Poll GET /jobs/{id} --> B;
+    B -- 10\. Fetch Status --> C;
 ```
 
 
