@@ -78,7 +78,7 @@ graph TD
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_GITHUB_USERNAME/codebase-analyzer.git
+git clone https://github.com/jnrdhn/codebase-analyzer.git
 cd codebase-analyzer
 
 # Create and activate a clean virtual environment
